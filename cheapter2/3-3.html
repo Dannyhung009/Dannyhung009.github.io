@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="root"></div>
+
+<!-- 載入 React。 -->
+<!-- 注意：在發佈應用程式前，請把「development.js」替換成「production.min.js」。 -->
+<script crossorigin src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+<!-- 載入 babel。 -->
+<script crossorigin src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+<script type="text/babel">
+  const deviceName = "Galaxy Note";
+  const currentPrice = 31900;
+  const salePrice = (currentPrice, discount) => currentPrice * discount;
+
+  const rootNode = document.getElementById('root');
+  const root = ReactDOM.createRoot(rootNode);
+
+  // JSX 中，可以在 {} 內放入表達式（expression）
+  root.render(
+          <h1>
+            現在 {deviceName} 的售價是 ${currentPrice}，特價 $
+            {salePrice(currentPrice, 0.85)}
+          </h1>
+  );
+</script>
+
+</body>
+</html>
